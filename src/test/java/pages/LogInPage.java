@@ -1,24 +1,26 @@
 package pages;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import util.ConfigReader;
 import util.Driver;
 
-public class LoginPage {
+public class LogInPage {
 
-    public LoginPage() {
-       // WebDriver driver = new ChromeDriver();
+    public LogInPage() {
         WebDriver driver = Driver.getDriver();
-        usernameInput = driver.findElement(By.name("email"));
-        passwordInput = driver.findElement(By.name("password_logIn"));
-        logInBtn = driver.findElement(By.xpath("//button[text()='Log In']"));
+        PageFactory.initElements(driver, this);
     }
 
+    @FindBy(name = "email")
     public WebElement usernameInput;
+
+    @FindBy(name = "password_logIn")
     public WebElement passwordInput;
+
+    @FindBy(xpath = "//button[text()='Log In']")
     public WebElement logInBtn;
 
     public void logIn() {

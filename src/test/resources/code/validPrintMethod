@@ -1,0 +1,13 @@
+public class Project {
+    public static void main (String[] args) {
+        print("Java is platform-independent!");
+    }
+
+    public static void print(String s){
+        System.out.println(s);
+        System.out.println(s);
+        System.out.println(s);
+        System.out.println(s);
+        System.out.println(s);
+    }
+}

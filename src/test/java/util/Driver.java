@@ -19,7 +19,7 @@ public class Driver {
         return driver;
     }
 
-    public static void kiilDriver() {
+    public static void killDriver() {
         driver.quit();
         driver = null;
     }
