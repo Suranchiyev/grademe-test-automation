@@ -18,7 +18,7 @@ Feature: Code evaluation
     Then Score message should be "Score: 0% (95% required to complete this project)"
     And Status message of "1" case should be "FAILED: org.opentest4j.AssertionFailedError: expected: <Hello, World!> but was: <Hello, world!>"
 
-  @smoke @regression
+  @regression
   Scenario: Compilation error evaluation
     Given I log in to grademe with valid credentials
     And I navigate to "Week 1" and open "hello world" assignment
@@ -27,7 +27,7 @@ Feature: Code evaluation
     Then Score message should be "Score: 0% (95% required to complete this project)"
     And Compilation error should be "Project.java:1: error: ';' expected public class Project { public static void main(String[] args)) { System.out.println(\"Hello, world!\"); }} ^"
 
-  @smoke @regression
+  @regression
   Scenario: Valid code evaluation with multiple cases
     Given I log in to grademe with valid credentials
     And I navigate to "Week 2" and open "print method" assignment
@@ -37,7 +37,7 @@ Feature: Code evaluation
     And Status message of "1" case should be "PASS"
     And Status message of "2" case should be "PASS"
 
-  @smoke @regression
+  @regression
   Scenario: Invalid output code evaluation with multiple cases
     Given I log in to grademe with valid credentials
     And I navigate to "Week 2" and open "print method" assignment
